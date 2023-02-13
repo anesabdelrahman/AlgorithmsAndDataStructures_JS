@@ -21,8 +21,3 @@ function pyramid(n) {
 }
 
 module.exports = pyramid;
-
-// 1: 1
-// 2: 3
-// 3: 5
-// 4: 7
