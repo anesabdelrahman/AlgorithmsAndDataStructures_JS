@@ -8,9 +8,38 @@
 // Example:
 //   fib(4) === 3
 
-// Using recursive approach
+// Using recursive approach - however this is an exponential runtime O(n^2)
+// function memoize(fn) {
+//   const cache = {};
+
+//   return function (...args) {
+//     if (cache[args]) {
+//       return cache[args];
+//     }
+//     const result = fn.apply(this, args);
+//     cache[args] = result;
+//     return result;
+//   };
+// }
+
+// function slowFib(n) {
+//   return n < 2 ? n : fib(n - 1) + fib(n - 2);
+// }
+
+//fib = memoize(slowFib);
+
 function fib(n) {
-  return n < 2 ? n : fib(n - 1) + fib(n - 2);
+  var result = [];
+
+  for (var i = 0; i <= n; i++) {
+    if (i < 2) {
+      result.push(i);
+      continue;
+    }
+    result.push(result[i - 1] + result[i - 2]);
+  }
+
+  return result[n];
 }
 
 module.exports = fib;
