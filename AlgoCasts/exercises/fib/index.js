@@ -36,6 +36,7 @@ function fib(n) {
       result.push(i);
       continue;
     }
+
     result.push(result[i - 1] + result[i - 2]);
   }
 
